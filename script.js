@@ -1,21 +1,20 @@
 let choices = ["Rock", "Paper", "Scissors"];
 let playerScore = 0;
 let computerScore = 0;
-
+//initiate varibles for the score
+//create list for the strings that will serve as the choices
  
 function computerChoice(choices){
     return choices[Math.floor(Math.random()*choices.length)];
 }
+//generate a random choice for the computer 
 
-//let computer = computerChoice(choices);
-
-//let input = prompt("Enter your answer:");
 
 function playerChoice(input){
     return input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
 }
+//grab the input from the player, regardless of characters's size
 
-//let player = playerChoice(input);
 
 function playRound(player,computer){
     switch(player){
@@ -29,7 +28,7 @@ function playRound(player,computer){
                     
                 case "Scissors":
                     playerScore++;
-                    return("you win. Rock breaks scissors");
+                    return("Player wins. Rock breaks scissors");
                     
             }
             break;
@@ -69,7 +68,8 @@ function playRound(player,computer){
 
     }
     
-}
+}   //this function plays the game for one round, lists all the possibilites and the outcome
+    //it also keeps track of the score at the end 
 
 function game(){
     for(round = 1; round <= 5; round++){
@@ -86,11 +86,7 @@ function game(){
         console.log("\nPlayer score: "+ playerScore);
         console.log("Computer score: "+ computerScore);
 
-        /*if(playerScore < computerScore){
-            console.log("Computer wins the game!");
-        } else{
-            console.log("Player wins the game!");
-        }*/
+        
 
     }
     if(playerScore < computerScore){
@@ -100,12 +96,10 @@ function game(){
     }else {
         console.log("Game ends in a tie");
     }
-}
+}  /* the game function plays the actual game for 5 rounds, displays the selections
+for both the computer and the player, displays the score at the end of each round and
+finally compares scores to declare the winner.*/
 
 game();
 
 
-//console.log(playRound(player,computer));
-
-//console.log("player entered:" + player);
-//console.log("computer entered:" + computer);
